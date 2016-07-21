@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Paul Jin Portfolio</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		
+</head>
+<body>
+	<div class="background">
+		<div class="page">
+			<div class="plogo">
+				<span> <a href="index.html"><img src="images/plogo.png" alt=""></a> </span>
+			</div>
+			<div class="sidebar">
+				<ul>
+					<li>
+						<a href="index.html">home</a>
+					</li>
+					<li>
+						<a href="about.html">about</a>
+					</li>
+					<li class="selected">
+						<a href="contact.html">contact</a>
+					</li>
+				</ul>
+				<div class="connect">
+					<a href="https://www.linkedin.com/in/paul-jin-500701119" id="linkedin">LinkedIn</a> <a href="http://stackoverflow.com/users/5832123/paul-j" id="stackoverflow">Stack Overflow</a> <a href="https://github.com/pauljin44" id="github">github</a>
+				</div>
+				<p class="footnote">
+					Paul Jin &#169; Copyright 2016. <br> All rights reserved.
+				</p>
+			</div>
+			<div class="body">
+				<div class="contact">
+					<div>
+						<h3>Contact with Me</h3>
+						<span>Posted : July 21, 2016</span> <img src="images/projectimage.jpg" alt="">
+						<p>
+							Exceptionally creative and dependable junior level Web Developer with a passion and superb work ethic. Broadly and deeply knowledgeable in a wide variety of coding as well as the principles and techniques of website construction and maintenance. Highly adept at conveying complex technical information to users friendly manner.
+						</p>
+						<p>
+							List of recent Apps were developed </br>
+
+							1.	Eat-Da-Burger App; Node-Express-Handlebars <br/>
+							-	Eat-Da-Burger! is a fun app that lets a user input the name of a burger they want to eat. <br/>
+							-	Once submitted. The burger is displayed in text on the left side of the page where it’s waiting to be devoured. <br/>
+							-	Each burger in the waiting area also has a Devour it! Button. Once clicked. The burger will move to the right side of the page. <br/>
+							-	Every Burger entered is stored in the database <br/>
+
+							https://github.com/pauljin44/hw14_eatDaBurger.git </br>
+
+
+
+						</p>
+						<p>
+							2.	NYT React Search App </br>
+							-	Created a new React-based rendition of NYT Article Search App. </br>
+							-	This app was required to create React Components, work with helper functions, and utilize the react mounting lifecycle to query and display articles based on user searches. </br>
+							-	
+							https://github.com/pauljin44/hw19-react.git </br>
+
+						</p>
+					</div>
+					
+					<div>
+							<form name="htmlform" method="post" action="html_form_send.php">
+								<table width="450px">
+									</tr>
+									<tr>
+									 <td valign="top">
+									  <label for="first_name">First Name *</label>
+									 </td>
+									 <td valign="top">
+									  <input  type="text" name="first_name" maxlength="50" size="30">
+									 </td>
+									</tr>
+									 
+									<tr>
+									 <td valign="top"">
+									  <label for="last_name">Last Name *</label>
+									 </td>
+									 <td valign="top">
+									  <input  type="text" name="last_name" maxlength="50" size="30">
+									 </td>
+									</tr>
+									<tr>
+									 <td valign="top">
+									  <label for="email">Email Address *</label>
+									 </td>
+									 <td valign="top">
+									  <input  type="text" name="email" maxlength="80" size="30">
+									 </td>
+									 
+									</tr>
+									<tr>
+									 <td valign="top">
+									  <label for="telephone">Telephone Number</label>
+									 </td>
+									 <td valign="top">
+									  <input  type="text" name="telephone" maxlength="30" size="30">
+									 </td>
+									</tr>
+									<tr>
+									 <td valign="top">
+									  <label for="comments">Comments *</label>
+									 </td>
+									 <td valign="top">
+									  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+									 </td>
+									 
+									</tr>
+									<tr>
+									 <td colspan="2" style="text-align:center">
+									  <input type="submit" value="Submit"> 
+									 </td>
+									</tr>
+								</table>
+							</form>
+					</div>
+			</div>
+		</div>
+	</div>
+
+						<script type="text/javascript">
+								<?php
+								if(isset($_POST['email'])) {
+								     
+								    // CHANGE THE TWO LINES BELOW
+								    $email_to = "you@yourdomain.com";
+								     
+								    $email_subject = "website html form submissions";
+								     
+								     
+								    function died($error) {
+								        // your error code can go here
+								        echo "We are very sorry, but there were error(s) found with the form you submitted. ";
+								        echo "These errors appear below.<br /><br />";
+								        echo $error."<br /><br />";
+								        echo "Please go back and fix these errors.<br /><br />";
+								        die();
+								    }
+								     
+								    // validation expected data exists
+								    if(!isset($_POST['first_name']) ||
+								        !isset($_POST['last_name']) ||
+								        !isset($_POST['email']) ||
+								        !isset($_POST['telephone']) ||
+								        !isset($_POST['comments'])) {
+								        died('We are sorry, but there appears to be a problem with the form you submitted.');       
+								    }
+								     
+								    $first_name = $_POST['first_name']; // required
+								    $last_name = $_POST['last_name']; // required
+								    $email_from = $_POST['email']; // required
+								    $telephone = $_POST['telephone']; // not required
+								    $comments = $_POST['comments']; // required
+								     
+								    $error_message = "";
+								    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+								  if(!preg_match($email_exp,$email_from)) {
+								    $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
+								  }
+								    $string_exp = "/^[A-Za-z .'-]+$/";
+								  if(!preg_match($string_exp,$first_name)) {
+								    $error_message .= 'The First Name you entered does not appear to be valid.<br />';
+								  }
+								  if(!preg_match($string_exp,$last_name)) {
+								    $error_message .= 'The Last Name you entered does not appear to be valid.<br />';
+								  }
+								  if(strlen($comments) < 2) {
+								    $error_message .= 'The Comments you entered do not appear to be valid.<br />';
+								  }
+								  if(strlen($error_message) > 0) {
+								    died($error_message);
+								  }
+								    $email_message = "Form details below.\n\n";
+								     
+								    function clean_string($string) {
+								      $bad = array("content-type","bcc:","to:","cc:","href");
+								      return str_replace($bad,"",$string);
+								    }
+								     
+								    $email_message .= "First Name: ".clean_string($first_name)."\n";
+								    $email_message .= "Last Name: ".clean_string($last_name)."\n";
+								    $email_message .= "Email: ".clean_string($email_from)."\n";
+								    $email_message .= "Telephone: ".clean_string($telephone)."\n";
+								    $email_message .= "Comments: ".clean_string($comments)."\n";
+								     
+								     
+								// create email headers
+								$headers = 'From: '.$email_from."\r\n".
+								'Reply-To: '.$email_from."\r\n" .
+								'X-Mailer: PHP/' . phpversion();
+								@mail($email_to, $email_subject, $email_message, $headers);  
+								?>
+
+								<?php
+								}
+								die();
+								?>
+					</script>
+
+	</body>
+</html>
